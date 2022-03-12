@@ -1,9 +1,11 @@
-﻿using System.Text.RegularExpressions;
-using RobotLib;
+﻿using RobotLib;
+
+const string CommentChar = "#";
 
 var tableDim = new TableDimension(Width: 5, Height: 5);
 var table = new Table(tableDim);
-string commandFilePath = @"D:\code\robot\Robot\RobotConsole\Input\Input1.txt";
+string folder = AppContext.BaseDirectory;
+string commandFilePath = $@"{folder}\Input\Input1.txt";
 
 var commands = File.ReadAllLines(commandFilePath);
 foreach (string command in commands)
@@ -11,7 +13,12 @@ foreach (string command in commands)
     string trimCommand = command.Trim().ToUpper();
     if (string.IsNullOrWhiteSpace(trimCommand))
     {
-        throw new ArgumentException("Empty Command Line");
+        continue;
+    }
+
+    if (trimCommand.StartsWith(CommentChar))
+    {
+        continue;
     }
 
     var cmdArgs = trimCommand
@@ -57,54 +64,13 @@ foreach (string command in commands)
             table.ActiveRobot.Right();
             break;
         case RobotCommand.REPORT:
-            table.Report();
+            Console.WriteLine(table.Report());
             break;
         case RobotCommand.ROBOT:
+            int idToActivate = int.Parse(robotArgs);
+            table.ActivateRobot(idToActivate);
             break;
         default:
             throw new ArgumentOutOfRangeException();
     }
 }
-
-// var position = new RobotPosition(0, 0, Facing.NORTH);
-// var robot = table.Place(position);
-// robot.Move();
-// robot.Move();
-// robot.Move();
-// robot.Move();
-// robot.Move();
-//
-// robot.Report();
-// position.X = 6;
-// try
-// {
-//     robot.Place(position);
-// }
-// catch {
-//
-// }
-//
-// robot.Left();
-// robot.Move();
-//
-// robot.Left();
-// robot.Move();
-// robot.Move();
-// robot.Move();
-// robot.Move();
-// robot.Move();
-// robot.Left();
-// robot.Move();
-// robot.Move();
-// robot.Move();
-// robot.Move();
-// robot.Move();
-//
-// Console.WriteLine(table.Report());
-//
-// var position2 = new RobotPosition(0, 0, Facing.NORTH);
-// table.Place(position2);
-// Console.WriteLine(table.Report());
-//
-//
-//

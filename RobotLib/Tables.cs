@@ -30,6 +30,18 @@ public class Table {
         }
     }
 
+    public Robot ActivateRobot (int id)
+    {
+        if (!Robots.Keys.Contains(id))
+        {
+            throw new ArgumentException($"Unable to activate invalid Robot Id {id}");
+        }
+
+        Robots.Values.ToList().ForEach(robot => robot.Active = false);
+        Robots[id].Active = true;
+        return Robots[id];
+    }
+
     public Robot Place (RobotPosition param) {
         bool isMakeRobotActive = Robots.Keys.Count == 0;
         int robotId = Robots.Keys.Count + 1;
@@ -46,7 +58,7 @@ public class Table {
             return "No Robot";
         }
 
-        if (Robots.Keys.Count() == 1) {
+        if (Robots.Keys.Count == 1) {
             return $"Output: {ActiveRobot.Report()}";
         }
 
