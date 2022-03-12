@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotLib", "RobotLib\RobotLib.csproj", "{6FA80A48-2F57-465F-905F-3CC17950CB0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotTest", "RobotTest\RobotTest.csproj", "{D7293516-92F1-4F65-8ACA-B66699DB0951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotConsole", "RobotConsole\RobotConsole.csproj", "{2C114029-7339-49B0-9AF0-88F4F7C24C9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FA80A48-2F57-465F-905F-3CC17950CB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA80A48-2F57-465F-905F-3CC17950CB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA80A48-2F57-465F-905F-3CC17950CB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA80A48-2F57-465F-905F-3CC17950CB0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7293516-92F1-4F65-8ACA-B66699DB0951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7293516-92F1-4F65-8ACA-B66699DB0951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7293516-92F1-4F65-8ACA-B66699DB0951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7293516-92F1-4F65-8ACA-B66699DB0951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C114029-7339-49B0-9AF0-88F4F7C24C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C114029-7339-49B0-9AF0-88F4F7C24C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C114029-7339-49B0-9AF0-88F4F7C24C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C114029-7339-49B0-9AF0-88F4F7C24C9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
