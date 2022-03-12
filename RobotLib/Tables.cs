@@ -9,7 +9,6 @@ public enum RobotCommand { PLACE, MOVE, LEFT, RIGHT, REPORT, ROBOT }
 public enum Facing { NORTH, SOUTH, EAST, WEST }
 public class OutOfTableException : Exception { }
 
-
 public record TableDimension(int Width, int Height);
 
 public class Table {
