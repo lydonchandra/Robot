@@ -1,11 +1,16 @@
 PLACE 0,0,NORTH
 MOVE
 REPORT
+# Output: 0,1,NORTH
 
 PLACE 0,0,NORTH
 ROBOT 2
 LEFT
 REPORT
+# Number of Robots: 2
+# Active Robot: 2
+# Robot 1 Output: 0,1,NORTH
+# Robot 2 Output: 0,0,WEST
 
 PLACE 1,2,EAST
 ROBOT 3
@@ -14,4 +19,9 @@ MOVE
 LEFT
 MOVE
 REPORT
+# Number of Robots: 3
+# Active Robot: 3
+# Robot 1 Output: 0,1,NORTH
+# Robot 2 Output: 0,0,WEST
+# Robot 3 Output: 3,3,NORTH
 

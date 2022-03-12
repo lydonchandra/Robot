@@ -39,7 +39,7 @@ public class Robot
         Id = id;
         _tableDimension = tableDimension;
         _logger = new LoggerConfiguration()
-            //.MinimumLevel.Verbose()
+            .MinimumLevel.Verbose()
             .WriteTo.Console().CreateLogger();
     }
 
