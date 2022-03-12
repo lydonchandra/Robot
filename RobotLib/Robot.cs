@@ -38,13 +38,13 @@ public class Robot
     public Robot (int id, TableDimension tableDimension) {
         Id = id;
         _tableDimension = tableDimension;
-        _logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+        _logger = new LoggerConfiguration()
+            //.MinimumLevel.Verbose()
+            .WriteTo.Console().CreateLogger();
     }
 
     public int Id { get; }
     public bool Active { get; set; }
-    public bool IsOnTable { get; set; }
-    public bool IsIgnoreCmdWhenNotOnTable { get; set; }
 
     private RobotPosition? _currentPosition;
     private readonly TableDimension _tableDimension;
@@ -54,12 +54,12 @@ public class Robot
     {
         if (!robotPosition.Validate(_tableDimension))
         {
-            _logger.Information($"Invalid Place Position, out of table {robotPosition}");
+            _logger.Verbose($"Invalid Place Position, out of table {robotPosition}");
             throw new OutOfTableException();
         }
 
         _currentPosition = robotPosition;
-        _logger.Information($"Robot {Id} placed at {_currentPosition}");
+        _logger.Verbose($"Robot {Id} placed at {_currentPosition}");
         return true;
     }
 
@@ -90,7 +90,7 @@ public class Robot
             return false;
         }
         _currentPosition = positionAfterMove;
-        _logger.Information($"Robot {Id} Moved to {_currentPosition}");
+        _logger.Verbose($"Robot {Id} Moved to {_currentPosition}");
         return true;
     }
 
@@ -99,7 +99,7 @@ public class Robot
         Rotate(
             _currentPosition ?? throw new InvalidOperationException(ErrorNotOnTable)
             , RotateDirection.LEFT);
-        _logger.Information($"Robot {Id} position: {_currentPosition}");
+        _logger.Verbose($"Robot {Id} position: {_currentPosition}");
         return _currentPosition;
     }
 
@@ -109,7 +109,7 @@ public class Robot
             _currentPosition ?? throw new InvalidOperationException(ErrorNotOnTable)
             , RotateDirection.RIGHT);
 
-        _logger.Information($"Robot {Id} position: {_currentPosition}");
+        _logger.Verbose($"Robot {Id} position: {_currentPosition}");
         return _currentPosition;
     }
 
@@ -144,7 +144,7 @@ public class Robot
 
     public RobotPosition? Report()
     {
-        _logger.Information($"{_currentPosition}");
+        _logger.Verbose($"{_currentPosition}");
         return _currentPosition;
     }
 }
