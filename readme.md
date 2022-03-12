@@ -5,8 +5,8 @@
 
 ## Implemented Functionalities
 * Multiple Robots functionalities
-  * PLACE <xxx> adds new robot 
-  * ROBOT <n> activates robot n
+  * PLACE {xxx} adds new robot 
+  * ROBOT {n} activates robot n
 
 ## Input File
 * Hardcoded to RobotConsole/Input/Input.txt
